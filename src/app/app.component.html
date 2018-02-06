@@ -1,0 +1,36 @@
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="javascript:void(0)">HttpClient</a>
+  </div>
+</nav>
+<div class="container">
+  <br />
+  <h4>Fetch JSON data from server</h4>
+  <div class="text-center" *ngIf="!users">
+    Fetching...
+  </div>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>UserId</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Website</th>
+          <th>Company</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.phone}}</td>
+          <td>{{user.website}}</td>
+          <td>{{user.company.name}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

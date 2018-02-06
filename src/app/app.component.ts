@@ -9,6 +9,7 @@ import { HttpService } from './http.service';
 export class AppComponent implements OnInit{
   title = 'app';
   users: any;
+  user: any;
   constructor(private httpService: HttpService){
 
   }
@@ -16,8 +17,20 @@ export class AppComponent implements OnInit{
   ngOnInit() {
     //this.httpService.getUsersdata();
     this.httpService.getUsersdata().subscribe(data => {
-      this.users = data;
-    });
-  }
+    this.users = data;
+  });
+}
+
+getUserDetails(id){
+  console.log("userId", id);
+  this.httpService.getUserdata(id).subscribe(data => {
+    console.log("data", data);
+    this.user = data;
+  });
+}
+
+flushUserData(){
+  this.user = "";
+}
 
 }

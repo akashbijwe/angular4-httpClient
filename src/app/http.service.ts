@@ -17,6 +17,12 @@ export class HttpService {
     .catch(this._errorhandler);
   }
 
+  getUserdata(id){
+    return this.http.get(this.url + '/'+ id)
+    .map((response: Response) => response.json())
+    .catch(this._errorhandler);
+  }
+
   _errorhandler(error: Response){
     console.log(error);
     return Observable.throw(error || 'server Error');

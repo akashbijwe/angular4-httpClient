@@ -6,6 +6,10 @@
 <div class="container">
   <br />
   <h4>Fetch JSON data from server</h4>
+  <div (click)="new()">abcs</div>
+  <div>{{title}}</div>
+  <input type="text" #text (keyup)="up(text)" >
+
   <div class="text-center" *ngIf="!users">
     Fetching...
   </div>
